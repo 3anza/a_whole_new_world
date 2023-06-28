@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>A WHOLE NEW WORLD</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <main>
+            <div id="game-intro"
+                <img src="./images/Start.jpg" alt="" class="logo-img" />
+                <button id="start-button">Let's Go!</button>
+                <p>Use the arrows to control ...</p>
+                <img src="" alt="" class=""/>
+            </div>
+
+            <div id="game-container">
+                <div>
+                    <h2>Stats(?)</h2>
+                    <p>Score: <span id="score">0</span></p>
+                    <p>Rides: <span id="rides">3</span></p>
+                </div>
+            
+                 <!-- #game-screen is initially hidden using CSS style display: none -->
+            <div id="game-screen"></div>
+            </div>
+
+            <!-- #game-end is initially hidden using CSS style display: none -->
+            <div id="game-end">
+                <img src="./images/gameOver.jpg" alt="" class="logo-img" />
+                <h1>Game Over</h1>
+                <br />
+                <button id="restart-button">Restart</button>
+            </div>
+        </main>
+        <script type="text/javascript" src="./js/game.js"></script>
+        <script type="text/javascript" src="./js/player.js"></script>
+        <script type="text/javascript" src="./js/script.js"></script>
+    </body>
+</html>
