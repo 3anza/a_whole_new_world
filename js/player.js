@@ -42,29 +42,22 @@ class Player {
         }
 
         move() {
-            const verticalSpeed = 50;
+            const verticalSpeed = 10;
             const horizontalSpeed = 0;
-
-            this.top += this.directionY * verticalSpeed;
-
-            if (this.top < 10) {
-                this.top = 10;
-            } else if (this.top > this.gameScreen.offsetHeight - this.height) {
-                this.top = this.gameScreen.offsetHeight - this.height; 
+        
+            const nextTop = this.top + this.directionY * verticalSpeed;
+            
+            if (nextTop < 0) {
+                this.top = 0;
+            } else if (nextTop > this.gameScreen.offsetHeight - this.height) {
+                this.top = this.gameScreen.offsetHeight - this.height;
+            } else {
+                this.top = nextTop;
             }
-            
+        
             this.left += this.directionX * horizontalSpeed;
-            
-            if (this.left < 10) {
-                this.left = 10; // Set the left position to the minimum value (e.g., 10)
-              } else if (this.left > this.gameScreen.offsetWidth - this.width) {
-                this.left = this.gameScreen.offsetWidth - this.width; // Set the left position to the maximum value
-              }
-
-
             this.updatePosition();
         }
-
 
         updatePosition() {
             this.element.style.top = `${this.top}px`;

@@ -1,8 +1,8 @@
 class Obstacle {
     constructor(gameScreen, width, height) {
         this.gameScreen = gameScreen
-        this.left = 900
-        this.top = Math.floor(Math.random() * 300 + 70)
+        this.left = Math.floor(Math.random() * 900 + 900)
+        this.top = Math.floor(Math.random() * 500 + 100)
         this.width = 140
         this.height = 110
         this.element = document.createElement('img')

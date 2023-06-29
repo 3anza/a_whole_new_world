@@ -1,13 +1,13 @@
 class Reward {
         constructor(gameScreen, width, height) {
             this.gameScreen = gameScreen
-            this.left = 900
-            this.top = Math.floor(Math.random() * 300 + 100)
+            this.left = Math.floor(Math.random() * 900 + 900)
+            this.top = Math.floor(Math.random() * 500 + 100)
             this.width = 100
             this.height = 70
             this.element = document.createElement('img')
     
-            this.element.src = '../images/lamp2.png'
+            this.element.src = '../lamp3.png'
             this.element.style.position = 'absolute'
             this.element.style.width = `${this.width}px`
             this.element.style.height = `${this.height}px`
@@ -16,7 +16,6 @@ class Reward {
             this.element.style.left = `${this.left}px`
     
             this.gameScreen.appendChild(this.element)
-            console.log("Reward created!")
         }
         
         

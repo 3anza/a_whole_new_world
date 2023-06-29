@@ -3,8 +3,8 @@ class Game {
         this.startScreen = document.getElementById('game-intro')
         this.gameScreen = document.getElementById('game-screen')
         this.gameEndScreen = document.getElementById('game-end')
-        this.height = 700
-        this.width = 900
+        this.height = 670
+        this.width = 1280
         this.player = new Player(this.gameScreen)
         this.obstacles = []
         this.obstacleInterval = null
@@ -20,7 +20,7 @@ class Game {
         this.gameScreen.style.width = `${this.width}px`
         this.gameScreen.style.height = `${this.height}px`
 
-        this.obstacleInterval = setInterval(() => this.generateObstacle(), 2000) 
+        this.obstacleInterval = setInterval(() => this.generateObstacle(), 1000) 
 
         this.startScreen.style.display = "none"
         this.gameScreen.style.display = "block"
@@ -98,8 +98,6 @@ class Game {
                     reward.remove();
                     this.rewards = this.rewards.filter(item => item !== reward);
                     this.score += 10;
-
-                    console.log("Got lamp!");
                 }
             });
         }
