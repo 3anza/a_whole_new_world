@@ -7,62 +7,17 @@ body {
   }
   
   #game-intro {
-    padding: 20px 0px;
-  }
-  
-  #game-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center; /* Center the game vertically */
-    height: 100%;
-  }
-  
-  #game-screen {
-    width: 100%;
-  height: 100%;
-  padding: 0;
-  overflow: hidden;
-  background-image: url(../images/Background_alt.jpeg);
-  background-size: cover;
-    
-    
-  }
-  
-  @keyframes slide {
-    0% {
-      background-position: 0 -1000px;
-    }
-    95% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 0 50px;
-    }
-  }
-  
-  #game-end {
-    display: none;
+    height: 100vh;
+    background-image: url('../images/Background_alt.jpeg');
+    background-size: cover;
+    background-position: center;
   }
 
-  #game-intro #scoreboard {
-    display: none;
-  }
-  
-  .game-intro p {
-    font-size: 22px;
-    color: #ebbe1d
-    font-family: "kingofthieves";
-  }
-  
-  .logo-img {
-    width: 350px;
-  }
-  
-  .arrows-img {
-    width: 150px;
-  }
-  
-  button {
+  #start-button {
     font-size: 30px;
     background-color: #650087;
     color: #ebbe1d;
@@ -70,5 +25,50 @@ body {
     border: 0;
     box-shadow: 5;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-top: 20px;
   }
+  
+  #scoreboard,
+  #lives, #score {
+    display: none; /* Hide score and lives */
+  }
+  
+  #game-container {
+    position: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #game-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    background-image: url(../images/GameBackground.jpeg);
+    background-size: cover;
+  }  
+
+  #scoreboard {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+  
+  #scoreboard div {
+    margin-bottom: 10px;
+  }
+  
+  #game-end {
+    display: none;
+  }
+  
+  .logo-img {
+    width: 350px;
+  }
+  
