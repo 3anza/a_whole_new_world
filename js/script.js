@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
   let game;
 
   startButton.addEventListener('click', () => {
+    console.log('Start button clicked')
     game = new Game();
     game.start();
   });
@@ -20,7 +21,7 @@ window.addEventListener('load', () => {
     const possibleKeystrokes = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
 
     if (possibleKeystrokes.includes(key)) {
-      setPlayerDirection(key, 1);
+      game.player.setDirection(key, 1);
     }
   }
 
@@ -29,7 +30,7 @@ window.addEventListener('load', () => {
     const possibleKeystrokes = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
 
     if (possibleKeystrokes.includes(key)) {
-      setPlayerDirection(key, 0);
+      game.player.setDirection(key, 0);
     }
   }
 

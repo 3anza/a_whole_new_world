@@ -16,6 +16,7 @@ class Reward {
             this.element.style.left = `${this.left}px`
     
             this.gameScreen.appendChild(this.element)
+            console.log("Reward created!")
         }
         
         

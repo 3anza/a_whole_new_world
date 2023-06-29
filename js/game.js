@@ -49,23 +49,20 @@ class Game {
           }
 
     gameLoop() {
-        this.animateId = requestAnimationFrame(() => {
-            this.gameLoop();
+      this.animateId = requestAnimationFrame(() => {
+        this.gameLoop();
         });
-        console.log(this.animateId);
-        if (this.animateId % 200 === 0) {
-            this.obstacles.push(new Obstacle(this.gameScreen));
-        }
-        this.updateObstacles()
 
-        this.update()
-        if (Math.random() > 100) {
-            this.rewards.push(new Reward(this.gameScreen));
-        }
-        this.checkCollisions()
+      if (Math.random() > 0.5) {
+        this.rewards.push(new Reward(this.gameScreen));
+      }
 
-        if (this.isGameOver) {
-            this.endGame();
+      this.updateObstacles()
+      this.update();
+      this.checkCollisions()
+
+      if (this.isGameOver) {
+        this.endGame()
         }
     }
 
@@ -73,11 +70,13 @@ class Game {
     update() {
         console.log("Update")
             this.player.move()
+            this.player.score += 1
             const obstaclesToKeep = [];
             this.obstacles.forEach(obstacle => {
             obstacle.move()
             if (this.player.didCollide(obstacle)) {
               obstacle.element.remove()
+              this.player.score += 10
               this.lives -= 1
             } else if (obstacle.top > this.gameScreen.offsetHeight) {
               this.score += 1
@@ -88,8 +87,9 @@ class Game {
             this.obstacles = obstaclesToKeep
       
             if (this.lives <= 0) {
-            this.isGameOver = true;
+            this.isGameOver = true
             }
+            this.updateInterface()
         }
 
         checkCollisions() {
@@ -98,6 +98,8 @@ class Game {
                     reward.remove();
                     this.rewards = this.rewards.filter(item => item !== reward);
                     this.score += 10;
+
+                    console.log("Got lamp!");
                 }
             });
         }
@@ -111,5 +113,13 @@ class Game {
           // Show end game screen
           this.gameEndScreen.style.display = 'block'
         }
+        updateInterface() {
+            const livesElement = document.getElementById('lives');
+            const scoreElement = document.getElementById('score');
+        
+            livesElement.textContent = `Lives: ${this.lives}`;
+            scoreElement.textContent = `Score: ${this.score}`;
+          }
+        
     }
     

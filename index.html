@@ -12,23 +12,21 @@
         <main>
             <div id="game-intro">
                 <img src="./images/Start.jpg" alt="" class="logo-img" />
-                <button id="start-button">Let's Go!</button>
-                <p>Use the arrows to control ...</p>
-                <img src="" alt="" class=""/>
+                <button id="start-button">LET'S FLY!</button>
+                <p>Use up and down arrows to avoid Iago and collect the lamps!</p>
             </div>
 
             <div id="game-container">
-                <div>
-                    <h2>Stats(?)</h2>
-                    <p>Score: <span id="score">0</span></p>
-                    <p>Rides: <span id="rides">3</span></p>
-                </div>
+                <div id="scoreboard" style="display: flex; flex-direction: column;">
+                    <div id="lives">Lives: </div>
+                    <div id="score">Score: </div>
+                  </div>
             
-                <!-- #game-screen is initially hidden using CSS style display: none -->
+                
                 <div id="game-screen"></div>
             </div>
 
-            <!-- #game-end is initially hidden using CSS style display: none -->
+            
             <div id="game-end">
                 <img src="./images/gameOver.jpg" alt="" class="logo-img" />
                 <h1>Game Over</h1>
