@@ -7,11 +7,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/style.css" />
+        <audio id="background-music" src="./sounds/A Whole New World (Instrumental Version) _ Aladdin OST.mp3" loop></audio>
     </head>
     <body>
         <main>
             <div id="game-intro">
-                <img src="../aWholeNewWorld/images/Background_alt.jpeg" alt="" class="logo-img" />
                 <button id="start-button">LET'S FLY!</button>
                 <p>Use up and down arrows to avoid Iago and collect the lamps!</p>
                 <div id="scoreboard">
@@ -32,12 +32,13 @@
               </div>
 
             
-            <div id="game-end">
-                <img src="./images/gameOver.jpg" alt="" class="logo-img" />
-                <h1>Game Over</h1>
+              <div id="game-end">
+                <img src="./images/GameOver_re_html.jpg" alt="" class="gameover-img" />
+                <h1>BETTER LUCK NEXT TIME, STREET RAT!</h1>
                 <br />
                 <button id="restart-button">Restart</button>
-            </div>
+              </div>
+            </main>
         </main>
         <script type="text/javascript" src="./js/game.js"></script>
         <script type="text/javascript" src="./js/player.js"></script>

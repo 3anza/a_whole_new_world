@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
 
   function handleKeyDown(event) {
     const key = event.key;
-    const possibleKeystrokes = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
+    const possibleKeystrokes = ['ArrowUp', 'ArrowDown'];
 
     if (possibleKeystrokes.includes(key)) {
       game.player.setDirection(key, 1);
@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
 
   function handleKeyUp(event) {
     const key = event.key;
-    const possibleKeystrokes = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
+    const possibleKeystrokes = ['ArrowUp', 'ArrowDown'];
 
     if (possibleKeystrokes.includes(key)) {
       game.player.setDirection(key, 0);
@@ -36,14 +36,8 @@ window.addEventListener('load', () => {
 
   function setPlayerDirection(key, value) {
     switch (key) {
-      case 'ArrowLeft':
-        game.player.directionX = -value;
-        break;
       case 'ArrowUp':
         game.player.directionY = -value;
-        break;
-      case 'ArrowRight':
-        game.player.directionX = value;
         break;
       case 'ArrowDown':
         game.player.directionY = value;

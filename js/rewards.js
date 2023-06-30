@@ -7,7 +7,7 @@ class Reward {
             this.height = 70
             this.element = document.createElement('img')
     
-            this.element.src = '../lamp3.png'
+            this.element.src = '../images/lamp4.png'
             this.element.style.position = 'absolute'
             this.element.style.width = `${this.width}px`
             this.element.style.height = `${this.height}px`
