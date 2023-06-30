@@ -146,11 +146,6 @@ class Game {
   endGame() {
     this.player.element.remove();
     this.obstacles.forEach(obstacle => obstacle.element.remove());
-
-    const backgroundMusic = document.getElementById("background-music");
-  backgroundMusic.pause();
-
-  this.player.collisionSound.pause();
     
     this.gameScreen.style.display = 'none';
     this.gameEndScreen.style.display = 'block';
